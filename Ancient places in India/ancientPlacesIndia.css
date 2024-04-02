@@ -1,0 +1,132 @@
+/* Added grid display to main tag*/
+.wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "header"
+    "content"
+    "sidebar"
+    "footer";
+}
+
+/* Define grid template to be portrait for screens >= 500px */
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 25% 75%;
+    grid-template-areas:
+      "header  header"
+      "content sidebar"
+      "footer  footer";
+  }
+}
+/* Define grid template to be landscape for screens >= 700px */
+@media (min-width: 700px) {
+  .wrapper {
+    grid-template-columns: 25% 50% 25%;
+    grid-template-areas:
+      "header header  header"
+      "content content sidebar"
+      "footer footer  footer";
+  }
+}
+
+/* Main page was divided into 4 grid areas (Ref:https: //developer.mozilla.org/en-US/docs/Glossary/Grid_Areas)*/ 
+.main-head {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+}
+
+.side {
+  grid-area: sidebar;
+}
+
+.main-footer {
+  grid-area: footer;
+}
+
+.footer{
+  font-size: 13px;
+}
+
+header {
+  border-bottom: 1px solid black;
+  margin: 2vh;
+}
+
+footer {
+  text-align: center;
+  font-size: 150%;
+  font-weight: lighter;
+  border-top: 1px solid black;
+}
+
+aside {
+  display: flex;
+  text-align: center;
+  font-size: 100%;
+  font-weight: lighter;
+}
+
+img {
+  
+  align-self: center;
+  width: 100%;
+  height: auto;
+  
+}
+
+a {
+  line-height: 5vh;
+}
+
+h1 {
+  text-align: center;
+  font-size: 250%;
+  font-weight: bold;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 130%;
+  font-weight: bold;
+}
+
+body{
+  font-family: cursive;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+main>div {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1vh 2vw;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+main>div:first-child {
+  border-left: none;
+}
+
+article {
+  border-bottom: 1px solid black;
+  margin: 2.5vh;
+  width: 30%;
+  height: auto;
+}
+
+article:last-child {
+  border-bottom:none;
+}
+
+article:nth-last-child(2) {
+  border-bottom: none;
+}
